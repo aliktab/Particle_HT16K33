@@ -1,6 +1,8 @@
 #pragma once
 
 /*
+  Original library: https://github.com/adafruit/Adafruit_LED_Backpack
+
   Copyright (C) 2014 Alik <aliktab@gmail.com> All rights reserved.
 
   This library is free software; you can redistribute it and/or
@@ -42,7 +44,7 @@ public:
 
 
   // Constructor: I2C address
-  HT16K33(uint8_t _addr);
+  HT16K33(uint8_t _addr, TwoWire & _i2c);
 
   void begin();
 
@@ -60,6 +62,8 @@ protected:
 
   uint8_t   m_i2c_addr;
   uint16_t  m_buffer[8];
+
+  TwoWire & m_i2c;
 };
 
 
@@ -67,7 +71,7 @@ class Adafruit_AlphaNum_4 : public HT16K33
 {
 public:
 
-  Adafruit_AlphaNum_4(uint8_t _addr);
+  Adafruit_AlphaNum_4(uint8_t _addr, TwoWire & _i2c);
 
   void write_char(uint8_t _digit, char _char, bool _dot);
 

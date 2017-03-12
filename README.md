@@ -19,7 +19,7 @@ _TODO: update this README_
 Connect any HT16K33 hardware, add the HT16K33 library to your project and follow this simple example:
 
 ```
-Adafruit_AlphaNum_4 display(0x70);
+Adafruit_AlphaNum_4 display(0x70, Wire);
 
 void setup()
 {

@@ -18,6 +18,7 @@
 
 #include "HT16K33.h"
 
+
 // class HT16K33 ---------------------------------------------------------
 
 #define HT16K33_OSC_ON_CMD      0x21
@@ -160,45 +161,49 @@ static const uint16_t font_table[] =
 };
 
 
-HT16K33::HT16K33(uint8_t _addr)
+HT16K33::HT16K33(uint8_t _addr, TwoWire & _i2c) :
+  m_i2c(_i2c)
 {
   m_i2c_addr = _addr;
 }
 
 void HT16K33::begin()
 {
-  Wire.begin();
+  if (!m_i2c.isEnabled())
+  {
+    m_i2c.begin();
+  }
 
-  Wire.beginTransmission(m_i2c_addr);
-  Wire.write(HT16K33_OSC_ON_CMD);
-  Wire.endTransmission();
+  m_i2c.beginTransmission(m_i2c_addr);
+  m_i2c.write(HT16K33_OSC_ON_CMD);
+  m_i2c.endTransmission();
 }
 
 void HT16K33::set_brightness(uint8_t _val)
 {
-  Wire.beginTransmission(m_i2c_addr);
-  Wire.write(HT16K33_BRIGHTNESS_CMD | (_val <= 0xf ? _val : 0xf));
-  Wire.endTransmission();
+  m_i2c.beginTransmission(m_i2c_addr);
+  m_i2c.write(HT16K33_BRIGHTNESS_CMD | (_val <= 0xf ? _val : 0xf));
+  m_i2c.endTransmission();
 }
 
 void HT16K33::set_blink_rate(BlinkMode _val)
 {
-  Wire.beginTransmission(m_i2c_addr);
-  Wire.write(HT16K33_BLINK_CMD | HT16K33_BLINK_ON | (_val << 1));
-  Wire.endTransmission();
+  m_i2c.beginTransmission(m_i2c_addr);
+  m_i2c.write(HT16K33_BLINK_CMD | HT16K33_BLINK_ON | (_val << 1));
+  m_i2c.endTransmission();
 }
 
 void HT16K33::show_data()
 {
-  Wire.beginTransmission(m_i2c_addr);
-  Wire.write((uint8_t)0x00);
+  m_i2c.beginTransmission(m_i2c_addr);
+  m_i2c.write((uint8_t)0x00);
 
   for (int i = 0; i < 8; i++)
   {
-    Wire.write(m_buffer[i] & 0xff);
-    Wire.write(m_buffer[i] >> 8);
+    m_i2c.write(m_buffer[i] & 0xff);
+    m_i2c.write(m_buffer[i] >> 8);
   }
-  Wire.endTransmission();
+  m_i2c.endTransmission();
 }
 
 void HT16K33::clear(void)
@@ -216,8 +221,8 @@ void HT16K33::write_raw(uint8_t _digit, uint16_t _raw)
 
 // class HT16K33_AlphaNum_4 ----------------------------------------------
 
-Adafruit_AlphaNum_4::Adafruit_AlphaNum_4(uint8_t _addr) :
-  HT16K33(_addr)
+Adafruit_AlphaNum_4::Adafruit_AlphaNum_4(uint8_t _addr, TwoWire & _i2c) :
+  HT16K33(_addr, _i2c)
 {
 }
 

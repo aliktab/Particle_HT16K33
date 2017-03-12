@@ -17,7 +17,7 @@
 */
 
 #include "HT16K33.h"
-Adafruit_AlphaNum_4 display(0x70);
+Adafruit_AlphaNum_4 display(0x70, Wire);
 
 void setup()
 {
