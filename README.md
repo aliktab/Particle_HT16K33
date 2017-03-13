@@ -1,18 +1,22 @@
-# NeoRingDsp
+# HT16K33
 
-A Particle library for HT16K33 chip
+*Particle Library for the HT16K33 chip and several boards based on it*
 
-## Welcome to your library!
+Particle library to control HT16K33 chip, supports connection via any hardware I2C.
 
-To get started, modify the sources in [src](src). Rename the example folder inside [examples](examples) to a more meaningful name and add additional examples in separate folders.
+Additional classes to support:
 
-To compile your example you can use `particle compile examples/usage` command in [Particle CLI](https://docs.particle.io/guide/tools-and-features/cli#update-your-device-remotely) or use our [Desktop IDE](https://docs.particle.io/guide/tools-and-features/dev/#compiling-code).
+  1. [Adafruit 14-Segment Alphanumeric LED FeatherWing](https://www.adafruit.com/products/3089)
+      Adafruit_AlphaNum_4
 
-Libraries can also depend on other libraries. To add a dependency use [`particle library add`](https://docs.particle.io/guide/tools-and-features/cli#adding-a-library) or [library management](https://docs.particle.io/guide/tools-and-features/dev/#managing-libraries) in Desktop IDE.
+  2. [Adafruit 16x8 LED Matrix Driver Backpack](https://www.adafruit.com/products/1427)
+      is planned
 
-After the library is done you can upload it with `particle library upload` or `Upload` command in the IDE. This will create a private (only visible by you) library that you can use in other projects. If you wish to make your library public, use `particle library publish` or `Publish` command.
+  3. [Adafruit 8x16 LED Matrix FeatherWing](https://www.adafruit.com/products/3090)
+      is planned
 
-_TODO: update this README_
+  4. [Adafruit 4-Digit 7-Segment LED Matrix Display FeatherWing](https://www.adafruit.com/products/3088)
+      is planned
 
 ## Usage
 
@@ -42,10 +46,6 @@ void loop()
 ```
 
 See the [examples](examples) folder for more details.
-
-## Documentation
-
-TODO: Describe `NeoRingDsp`
 
 ## Contributing
 

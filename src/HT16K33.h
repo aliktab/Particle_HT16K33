@@ -1,7 +1,7 @@
 #pragma once
 
 /*
-  Original library: https://github.com/adafruit/Adafruit_LED_Backpack
+  Based on: https://github.com/adafruit/Adafruit_LED_Backpack
 
   Copyright (C) 2014 Alik <aliktab@gmail.com> All rights reserved.
 
