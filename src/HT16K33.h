@@ -44,7 +44,10 @@ public:
 
 
   // Constructor: I2C address
-  HT16K33(uint8_t _addr, TwoWire & _i2c);
+  HT16K33(
+      uint8_t   _addr = 0x70,
+      TwoWire & _i2c  = Wire
+    );
 
   void begin();
 
