@@ -6,17 +6,10 @@ Particle library to control HT16K33 chip, supports connection via any hardware I
 
 Additional classes to support:
 
-  1. [Adafruit 14-Segment Alphanumeric LED FeatherWing](https://www.adafruit.com/products/3089)
-      Adafruit_AlphaNum_4
-
-  2. [Adafruit 16x8 LED Matrix Driver Backpack](https://www.adafruit.com/products/1427)
-      is planned
-
-  3. [Adafruit 8x16 LED Matrix FeatherWing](https://www.adafruit.com/products/3090)
-      is planned
-
-  4. [Adafruit 4-Digit 7-Segment LED Matrix Display FeatherWing](https://www.adafruit.com/products/3088)
-      is planned
+  1. [Adafruit 14-Segment Alphanumeric LED FeatherWing](https://www.adafruit.com/products/3089) - Adafruit_AlphaNum_4
+  2. [Adafruit 16x8 LED Matrix Driver Backpack](https://www.adafruit.com/products/1427) - is planned
+  3. [Adafruit 8x16 LED Matrix FeatherWing](https://www.adafruit.com/products/3090) - is planned
+  4. [Adafruit 4-Digit 7-Segment LED Matrix Display FeatherWing](https://www.adafruit.com/products/3088) - is planned
 
 ## Usage
 
