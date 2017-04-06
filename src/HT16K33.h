@@ -43,12 +43,13 @@ public:
   };
 
 
-  // Constructor: I2C address
+  // сonstructor: I2C address
   HT16K33(
       uint8_t   _addr = 0x70,
       TwoWire & _i2c  = Wire
     );
 
+  // initialize chip and i2c interface if needed
   void begin();
 
   void set_brightness(uint8_t _val);
